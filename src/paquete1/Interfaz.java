@@ -82,7 +82,6 @@ public class Interfaz extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 			int a, b, c;
-			int resultado2;
 			a=Integer.parseInt(precio.getText());
 			b=Integer.parseInt(descuento.getText());
 			c=((b/100)*a);
