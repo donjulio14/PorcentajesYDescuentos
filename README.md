@@ -1,5 +1,5 @@
 # PorcentajesYDescuentos
-
+Esta aplicacion conciste practicamente en una calculadora en la que puedes realizar descuentos, donde debes introducir primero el precio de tu producto y luego el descuento q le quieres aplicar.
 
 Debes indicar en el Readme, al principio, de que va tu proyecto.
 Tienes que hacer un MVC funcional (sólo un método main estático)
