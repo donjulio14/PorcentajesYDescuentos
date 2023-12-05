@@ -127,16 +127,10 @@ public class Interfaz extends JFrame {
 		btnCalcular.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                
                 double precio = Double.parseDouble(textPrecio.getText());
-                
-                
-                double descuento = Double.parseDouble(textDescuento.getText());
-                
-                
+                double descuento = Double.parseDouble(textDescuento.getText());            
                 double resultado = precio - (precio * (descuento / 100));
-                
-               
+ 
                 textResultado.setText(String.valueOf(resultado));
             }
         });
