@@ -11,16 +11,19 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+import java.awt.GridBagLayout;
+import java.awt.GridBagConstraints;
+import java.awt.Insets;
+import java.awt.Color;
 
 public class Interfaz extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JTextField precio;
-	private JTextField descuento;
-	private JTextField resultado;
+	private JTextField textPrecio;
+	private JTextField textDescuento;
+	private JButton btnCalcular;
+	private JTextField textResultado;
 
 	/**
 	 * Launch the application.
@@ -45,60 +48,97 @@ public class Interfaz extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(128, 255, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
-		contentPane.setLayout(null);
+		GridBagLayout gbl_contentPane = new GridBagLayout();
+		gbl_contentPane.columnWidths = new int[]{175, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15, 0, 0, 0, 0, 33, 0, 58, 89, 0};
+		gbl_contentPane.rowHeights = new int[]{29, 30, 0, 33, 30, 0, 0, 0, 0, 0};
+		gbl_contentPane.columnWeights = new double[]{0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, Double.MIN_VALUE};
+		gbl_contentPane.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+		contentPane.setLayout(gbl_contentPane);
 		
-		JLabel lblNewLabel = new JLabel("Calculadora de Descuentos y Porcentajes\r\n");
-		lblNewLabel.setFont(new Font("Mongolian Baiti", Font.BOLD | Font.ITALIC, 16));
-		lblNewLabel.setBounds(75, 0, 325, 46);
-		contentPane.add(lblNewLabel);
+		JLabel lblNewLabel = new JLabel("Calculadora de Descuentos");
+		lblNewLabel.setFont(new Font("Palatino Linotype", Font.BOLD | Font.ITALIC, 15));
+		GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
+		gbc_lblNewLabel.gridwidth = 24;
+		gbc_lblNewLabel.insets = new Insets(0, 0, 5, 5);
+		gbc_lblNewLabel.gridx = 2;
+		gbc_lblNewLabel.gridy = 2;
+		contentPane.add(lblNewLabel, gbc_lblNewLabel);
 		
-		JLabel lblNewLabel_1 = new JLabel("Introduce el precio de tu producto:\r\n");
-		lblNewLabel_1.setBounds(10, 37, 174, 25);
-		contentPane.add(lblNewLabel_1);
+		JLabel lblNewLabel_1 = new JLabel("Inserta el precio del producto:");
+		GridBagConstraints gbc_lblNewLabel_1 = new GridBagConstraints();
+		gbc_lblNewLabel_1.anchor = GridBagConstraints.WEST;
+		gbc_lblNewLabel_1.gridwidth = 12;
+		gbc_lblNewLabel_1.insets = new Insets(0, 0, 5, 5);
+		gbc_lblNewLabel_1.gridx = 3;
+		gbc_lblNewLabel_1.gridy = 3;
+		contentPane.add(lblNewLabel_1, gbc_lblNewLabel_1);
 		
-		precio = new JTextField();
-		precio.setBounds(10, 57, 229, 20);
-		contentPane.add(precio);
-		precio.setColumns(10);
+		textPrecio = new JTextField();
+		GridBagConstraints gbc_textPrecio = new GridBagConstraints();
+		gbc_textPrecio.gridwidth = 11;
+		gbc_textPrecio.insets = new Insets(0, 0, 5, 5);
+		gbc_textPrecio.fill = GridBagConstraints.HORIZONTAL;
+		gbc_textPrecio.gridx = 15;
+		gbc_textPrecio.gridy = 3;
+		contentPane.add(textPrecio, gbc_textPrecio);
+		textPrecio.setColumns(10);
 		
-		JLabel lblNewLabel_2 = new JLabel("Introduce el porcentaje de descuento:\r\n");
-		lblNewLabel_2.setBounds(10, 88, 185, 20);
-		contentPane.add(lblNewLabel_2);
+		JLabel lblNewLabel_2 = new JLabel("Inserta el porcentaje de descuento:");
+		GridBagConstraints gbc_lblNewLabel_2 = new GridBagConstraints();
+		gbc_lblNewLabel_2.anchor = GridBagConstraints.WEST;
+		gbc_lblNewLabel_2.gridwidth = 12;
+		gbc_lblNewLabel_2.insets = new Insets(0, 0, 5, 5);
+		gbc_lblNewLabel_2.gridx = 3;
+		gbc_lblNewLabel_2.gridy = 4;
+		contentPane.add(lblNewLabel_2, gbc_lblNewLabel_2);
 		
-		descuento = new JTextField();
-		descuento.setBounds(10, 106, 229, 20);
-		contentPane.add(descuento);
-		descuento.setColumns(10);
+		textDescuento = new JTextField();
+		GridBagConstraints gbc_textDescuento = new GridBagConstraints();
+		gbc_textDescuento.gridwidth = 11;
+		gbc_textDescuento.insets = new Insets(0, 0, 5, 5);
+		gbc_textDescuento.fill = GridBagConstraints.HORIZONTAL;
+		gbc_textDescuento.gridx = 15;
+		gbc_textDescuento.gridy = 4;
+		contentPane.add(textDescuento, gbc_textDescuento);
+		textDescuento.setColumns(10);
 		
-		JButton btnCalcular = new JButton("¡Calcular!");
-		btnCalcular.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
+		btnCalcular = new JButton("Calcular\r\n");
+		GridBagConstraints gbc_btnCalcular = new GridBagConstraints();
+		gbc_btnCalcular.gridwidth = 4;
+		gbc_btnCalcular.insets = new Insets(0, 0, 5, 5);
+		gbc_btnCalcular.gridx = 13;
+		gbc_btnCalcular.gridy = 5;
+		contentPane.add(btnCalcular, gbc_btnCalcular);
+		
+		textResultado = new JTextField();
+		GridBagConstraints gbc_textResultado = new GridBagConstraints();
+		gbc_textResultado.gridwidth = 17;
+		gbc_textResultado.insets = new Insets(0, 0, 5, 5);
+		gbc_textResultado.fill = GridBagConstraints.HORIZONTAL;
+		gbc_textResultado.gridx = 6;
+		gbc_textResultado.gridy = 6;
+		contentPane.add(textResultado, gbc_textResultado);
+		textResultado.setColumns(10);
+		
 		btnCalcular.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-			int a, b, c;
-			int calo;
-			a=Integer.parseInt(precio.getText());
-			b=Integer.parseInt(descuento.getText());
-			c=((b/100)*a);
-			resultado.setText(String.valueOf(c));
-			}
-		});
-		btnCalcular.setBounds(171, 149, 89, 23);
-		contentPane.add(btnCalcular);
-		
-		resultado = new JTextField();
-		resultado.setBounds(136, 200, 174, 20);
-		contentPane.add(resultado);
-		resultado.setColumns(10);
-		
-		JLabel lblNewLabel_3 = new JLabel("Resultado:\r\n");
-		lblNewLabel_3.setBounds(77, 203, 70, 14);
-		contentPane.add(lblNewLabel_3);
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                
+                double precio = Double.parseDouble(textPrecio.getText());
+                
+                
+                double descuento = Double.parseDouble(textDescuento.getText());
+                
+                
+                double resultado = precio - (precio * (descuento / 100));
+                
+               
+                textResultado.setText(String.valueOf(resultado));
+            }
+        });
 	}
 }
