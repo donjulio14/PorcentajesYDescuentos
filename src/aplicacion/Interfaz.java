@@ -1,10 +1,13 @@
-package paquete1;
+package aplicacion;
 
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import controlador.Controlador;
+
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JTextField;
@@ -59,23 +62,23 @@ public class Interfaz extends JFrame {
 		gbl_contentPane.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		contentPane.setLayout(gbl_contentPane);
 		
-		JLabel lblNewLabel = new JLabel("Calculadora de Descuentos");
-		lblNewLabel.setFont(new Font("Palatino Linotype", Font.BOLD | Font.ITALIC, 15));
-		GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
-		gbc_lblNewLabel.gridwidth = 24;
-		gbc_lblNewLabel.insets = new Insets(0, 0, 5, 5);
-		gbc_lblNewLabel.gridx = 2;
-		gbc_lblNewLabel.gridy = 2;
-		contentPane.add(lblNewLabel, gbc_lblNewLabel);
+		JLabel lTitulo = new JLabel("Calculadora de Descuentos");
+		lTitulo.setFont(new Font("Palatino Linotype", Font.BOLD | Font.ITALIC, 15));
+		GridBagConstraints gbc_lTitulo = new GridBagConstraints();
+		gbc_lTitulo.gridwidth = 24;
+		gbc_lTitulo.insets = new Insets(0, 0, 5, 5);
+		gbc_lTitulo.gridx = 2;
+		gbc_lTitulo.gridy = 2;
+		contentPane.add(lTitulo, gbc_lTitulo);
 		
-		JLabel lblNewLabel_1 = new JLabel("Inserta el precio del producto:");
-		GridBagConstraints gbc_lblNewLabel_1 = new GridBagConstraints();
-		gbc_lblNewLabel_1.anchor = GridBagConstraints.WEST;
-		gbc_lblNewLabel_1.gridwidth = 12;
-		gbc_lblNewLabel_1.insets = new Insets(0, 0, 5, 5);
-		gbc_lblNewLabel_1.gridx = 3;
-		gbc_lblNewLabel_1.gridy = 3;
-		contentPane.add(lblNewLabel_1, gbc_lblNewLabel_1);
+		JLabel LinstruccionP = new JLabel("Inserta el precio del producto:");
+		GridBagConstraints gbc_LinstruccionP = new GridBagConstraints();
+		gbc_LinstruccionP.anchor = GridBagConstraints.WEST;
+		gbc_LinstruccionP.gridwidth = 12;
+		gbc_LinstruccionP.insets = new Insets(0, 0, 5, 5);
+		gbc_LinstruccionP.gridx = 3;
+		gbc_LinstruccionP.gridy = 3;
+		contentPane.add(LinstruccionP, gbc_LinstruccionP);
 		
 		textPrecio = new JTextField();
 		GridBagConstraints gbc_textPrecio = new GridBagConstraints();
@@ -87,14 +90,14 @@ public class Interfaz extends JFrame {
 		contentPane.add(textPrecio, gbc_textPrecio);
 		textPrecio.setColumns(10);
 		
-		JLabel lblNewLabel_2 = new JLabel("Inserta el porcentaje de descuento:");
-		GridBagConstraints gbc_lblNewLabel_2 = new GridBagConstraints();
-		gbc_lblNewLabel_2.anchor = GridBagConstraints.WEST;
-		gbc_lblNewLabel_2.gridwidth = 12;
-		gbc_lblNewLabel_2.insets = new Insets(0, 0, 5, 5);
-		gbc_lblNewLabel_2.gridx = 3;
-		gbc_lblNewLabel_2.gridy = 4;
-		contentPane.add(lblNewLabel_2, gbc_lblNewLabel_2);
+		JLabel linstruccionD = new JLabel("Inserta el porcentaje de descuento:");
+		GridBagConstraints gbc_linstruccionD = new GridBagConstraints();
+		gbc_linstruccionD.anchor = GridBagConstraints.WEST;
+		gbc_linstruccionD.gridwidth = 12;
+		gbc_linstruccionD.insets = new Insets(0, 0, 5, 5);
+		gbc_linstruccionD.gridx = 3;
+		gbc_linstruccionD.gridy = 4;
+		contentPane.add(linstruccionD, gbc_linstruccionD);
 		
 		textDescuento = new JTextField();
 		GridBagConstraints gbc_textDescuento = new GridBagConstraints();
@@ -134,5 +137,6 @@ public class Interfaz extends JFrame {
                 textResultado.setText(String.valueOf(resultado));
             }
         });
+	
 	}
 }
