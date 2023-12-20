@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"aplicacion"},{"l":"cabecera"},{"l":"controlador"},{"l":"pantalladecarga"},{"l":"vista"}];updateSearchResults();
